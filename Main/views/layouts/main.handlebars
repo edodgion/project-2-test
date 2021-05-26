@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stick It To Em</title>
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="flex-column">
+    <header class="display-flex justify-space-between align-center p-1" "custom-nav">
+      <h1>
+        {{!-- <span role="img" aria-label="money"></span>
+        <a href="/">Stick It To Em</a> --}}
+        <a class="active" href="/"><img src="./img/keepit.png"></a>
+      </h1>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a class="no-button" href="/profile">Create New Event</a> |
+        <a class="no-button" href="/" id="logout"><img src="./img/LOGOUT.png"></a>
+          {{else}}
+        {{!-- <a href="/login">login</a> --}}
+         <a class="custom-font"class="goRight" href="/login"><img src="./img/login.png"></a>
+         <a class="custom-font"class="goRight" href="/signup"><img src="./img/signup.png"></a>
+        {{/if}}
+      </nav>
+    </header>
+    <div class="text-center">
+       <img class= "m-auto d-block">
+    <img class= "m-auto d-block" src="./img/sticky2.png" alt="sticky-logo">
+    
+    </div>
+    <main class="container container-fluid mt-5">
+      <div class="custom-bg" id="bg">
+        <img importance="low" src="./img/corkboard.jpg" alt="bg-image">
+    </div>
+
+      <!-- Render the sub layout -->
+      {{{ body }}}
+    </main>
+    <footer>
+      
+    </footer>
+  </div>
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
+
