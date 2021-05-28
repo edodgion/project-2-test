@@ -1,5 +1,7 @@
 <!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
+{{#if logged_in}}
+
+{{#each projects as |project|}}
 <div class="container">
 <div class="row mb-4 project">
   <div class="col-md-3">
@@ -11,3 +13,6 @@
 </div>
 </div>
 {{/each}}
+{{else}}
+<div></div>
+{{/if}}

@@ -15,30 +15,40 @@
       <h1>
         {{!-- <span role="img" aria-label="money"></span>
         <a href="/">Stick It To Em</a> --}}
-        <a class="active" href="/"><img src="./img/keepit.png"></a>
+        <a class="active" href="/"><img src="https://i.ibb.co/wNkyLf1/keepit.png"></a>
       </h1>
         <!-- Conditionally render login or logout links -->
+         <nav>
         {{#if logged_in}}
-        <a class="no-button" href="/profile">Create New Event</a> |
-        <a class="no-button" href="/" id="logout"><img src="./img/LOGOUT.png"></a>
+        <a class="no-button" href="/profile"><img src="https://i.ibb.co/kmY0LT0/newevent.png"></a> 
+        <a class="no-button" href="/" id="logout"><img src="https://i.ibb.co/ZX3tL2t/logout.png"></a>
           {{else}}
         {{!-- <a href="/login">login</a> --}}
-         <a class="custom-font"class="goRight" href="/login"><img src="./img/login.png"></a>
-         <a class="custom-font"class="goRight" href="/signup"><img src="./img/signup.png"></a>
-         <img class= "m-auto d-block" src="./img/sticky2.png" alt="sticky-logo">
+         <a class="custom-font"class="goRight" href="/login"><img src="https://i.ibb.co/0C4qDK2/LOGIN.png"></a>
+         <a class="custom-font"class="goRight" href="/signup"><img src="https://i.ibb.co/3z2FRJd/signup.png"></a>
+       </nav>
         {{/if}}
-      </nav>
     </header>
-    <div class="text-center">
-       <img class= "m-auto d-block">
-    </div>
     <main class="container container-fluid mt-5">
       <div class="custom-bg" id="bg">
-        <img importance="low" src="./img/corkboard.jpg" alt="bg-image">
+        <img importance="low" src="https://i.ibb.co/wr0txL1/corkboard.jpg" alt="bg-image">
     </div>
+{{#if logged_in}}
+<div class="text-center">
+  </div>
+{{else}}
+    <div class="text-center">
+ <img class= "m-auto d-block" src="./img/sticky2.png" alt="sticky-logo">
+  </div>
+  {{/if}}
+
 
       <!-- Render the sub layout -->
-      {{{ body }}}
+    {{{ body }}}
+   
+    <div class="text-center">
+  </div>
+  
     </main>
     <footer>
       
