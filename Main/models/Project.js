@@ -26,6 +26,7 @@ Project.init(
     needed_funding: {
       type: DataTypes.FLOAT,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
