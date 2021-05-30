@@ -3,6 +3,7 @@ const newFormHandler = async (event) => {
 
   const name = document.querySelector('#project-name').value.trim();
   const description = document.querySelector('#project-desc').value.trim();
+  
 
   if (name && description) {
     const response = await fetch(`/api/projects`, {
@@ -15,8 +16,10 @@ const newFormHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace('/profile');
+      const goodNotification = new Notification('Your event has been created successfully!');
+
     } else {
-      alert('Failed to create project');
+      const badNotification = new Notification('Your event could not be created at this time, please check the requirements and try again.');
     }
   }
 };
